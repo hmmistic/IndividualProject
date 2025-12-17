@@ -20,9 +20,13 @@ namespace CarRentalSystem
         private void RefreshGrid()
         {
             dataGridView1.Rows.Clear();
-            for (int i = 0; i < Form2.rentals.Count; i++)
+            for (int i = 0; i < Form2.rentalCars.Count; i++)
             {
-                dataGridView1.Rows.Add(Form2.rentals[i]);
+                dataGridView1.Rows.Add(
+                     Form2.rentalCars[i],
+                     Form2.rentalCustomers[i],
+                     Form2.rentalDates[i]
+                 );
             }
         }
 
@@ -37,7 +41,7 @@ namespace CarRentalSystem
             {
                 int index = dataGridView1.SelectedRows[0].Index;
 
-                string rental = Form2.rentals[index];
+                string rental = Form2.rentalCars[index];
                 for (int i = 0; i < Form2.cars.Count; i++)
                 {
                     if (rental.Contains(Form2.cars[i]))
@@ -47,7 +51,9 @@ namespace CarRentalSystem
                     }
                 }
 
-                Form2.rentals.RemoveAt(index);
+                Form2.rentalCars.RemoveAt(index);
+                Form2.rentalCustomers.RemoveAt(index);
+                Form2.rentalDates.RemoveAt(index);
                 RefreshGrid();
                 MessageBox.Show("Maşın uğurla geri qaytarıldı!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

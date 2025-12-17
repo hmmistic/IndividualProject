@@ -19,17 +19,15 @@ namespace CarRentalSystem
 
         private void Form8_Load(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            if (Form2.rentals.Count == 0)
+            for (int i = 0; i < Form2.rentalCars.Count; i++)
             {
-                dataGridView1.Rows.Add("Heç bir akitv icarə yoxdur.");
-            }
-            else
-            {
-                for (int i = 0; i < Form2.rentals.Count; i++)
-                {
-                    dataGridView1.Rows.Add(Form2.rentals[i]);
-                }
+                dataGridView1.Rows.Add(
+                    Form2.rentalCars[i],
+                    Form2.rentalCustomers[i],
+                    Form2.rentalDays[i],
+                    Form2.rentalTotals[i],
+                    Form2.rentalDates[i]
+                );
             }
         }
 

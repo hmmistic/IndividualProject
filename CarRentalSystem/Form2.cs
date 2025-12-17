@@ -22,10 +22,14 @@ namespace CarRentalSystem
         public static List<string> carRates = new List<string> { "50", "45", "80" };
         public static List<bool> carAvailable = new List<bool> { true, false, true };
 
-        public static List<string> customers = new List<string> { "John Smith", "Jane Doe" };
-        public static List<string> customerPhones = new List<string> { "555-0100", "555-0200" };
+        public static List<string> customers = new List<string> { "Rəşad Qasımlı", "Musa Məmmədli" };
+        public static List<string> customerPhones = new List<string> { "+994501234567", "+994771234567" };
 
-        public static List<string> rentals = new List<string>();
+        public static List<string> rentalCars = new List<string>();
+        public static List<string> rentalCustomers = new List<string>();
+        public static List<string> rentalDays = new List<string>();
+        public static List<string> rentalTotals = new List<string>();
+        public static List<string> rentalDates = new List<string>();
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

@@ -51,8 +51,11 @@ namespace CarRentalSystem
                 decimal rate = decimal.Parse(Form2.carRates[carIndex]);
                 decimal total = rate * numDays;
 
-                string rental = selectedCustomer + " adlı müştəri " + selectedCar + " maşınını " + days + " günə icarəyə götürdü - Ümümu məbləğ: $" + total + " - Tarix: " + DateTime.Now.ToString();
-                Form2.rentals.Add(rental);
+                Form2.rentalCars.Add(selectedCar);
+                Form2.rentalCustomers.Add(selectedCustomer);
+                Form2.rentalDays.Add(days);
+                Form2.rentalTotals.Add("$" + total.ToString());
+                Form2.rentalDates.Add(DateTime.Now.ToString("dd/MM/yyyy"));
 
                 MessageBox.Show("Avtomobil uğurla icarəyə götürüldü! Ümumi qiymət: ₼" + total, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

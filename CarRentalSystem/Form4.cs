@@ -17,7 +17,7 @@ namespace CarRentalSystem
             InitializeComponent();
         }
 
-        private void RefreshList()
+        private void RefreshGrid()
         {
             dataGridView1.Rows.Clear();
             for (int i = 0; i < Form2.cars.Count; i++)
@@ -29,7 +29,7 @@ namespace CarRentalSystem
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            RefreshList();
+            RefreshGrid();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace CarRentalSystem
                 Form2.carAvailable.Add(true);
                 textBox1.Clear();
                 textBox2.Clear();
-                RefreshList();
+                RefreshGrid();
                 MessageBox.Show("Maşın uğurla əlavə edildi!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -60,7 +60,7 @@ namespace CarRentalSystem
                 Form2.cars.RemoveAt(index);
                 Form2.carRates.RemoveAt(index);
                 Form2.carAvailable.RemoveAt(index);
-                RefreshList();
+                RefreshGrid();
                 MessageBox.Show("Maşın uğurla silindi!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
